@@ -4,6 +4,7 @@ from datetime import datetime , timedelta
 from fastapi import Depends, HTTPException , status
 from fastapi.security.oauth2 import OAuth2PasswordBearer
 from .database import SessionLocal
+from . import models
 
 oauth2scheme = OAuth2PasswordBearer(tokenUrl="login")
 

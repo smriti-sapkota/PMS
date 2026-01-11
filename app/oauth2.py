@@ -47,7 +47,7 @@ def get_current_user(db:SessionLocal,token = Depends(oauth2scheme)):
 
     payload = verify_access_token(token , credentials_exception)
 
-    user = db.get(models.User , payload.id)
+    user = db.get(models.User , payload)
 
     return user 
        

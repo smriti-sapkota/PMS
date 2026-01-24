@@ -54,7 +54,7 @@ class Guest(SQLModel, table=True):
 
 class Reservation(SQLModel, table=True):
     __tablename__='reservations'   
-    id : int | None = Field(default=None, primary_key=True)
+    id :int | None = Field(default=None, primary_key=True)
     guest_id : int = Field(sa_column=Column(Integer, ForeignKey("guests.id", ondelete="CASCADE")))
     room_id: int | None = Field(sa_column=Column(Integer, ForeignKey("rooms.id", ondelete="CASCADE")))
     check_in_date : date
